@@ -2,13 +2,14 @@ package com.spring2023.project.model;
 
 import lombok.Getter;
 
+// Книга
 @Getter
 public class Book {
-    private long id;
-    private String title;
-    private String author;
-    private double price;
-    private BookGenre genre;
+    private long id; // id книги
+    private String title; // название
+    private String author; // автор
+    private double price; // цена
+    private BookGenre genre; // жанр
     public Book(long id, String title, String author, double price, BookGenre genre) {
         this.id = id;
         this.title = title;
