@@ -1,15 +1,21 @@
 package com.spring2023.project.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Table;
-import lombok.Getter;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 
 /* Пользователь */
-@Getter
+@Data
+@NoArgsConstructor(force = true)
+@AllArgsConstructor
+@Builder
+@Entity
 @Table(name="ACCOUNTS")
-public abstract class Person {
+public class Person {
+    @Id
     @GeneratedValue
     @Column(name="id", nullable=false)
     private long id; // индивидуальный номер пользователя
@@ -17,6 +23,9 @@ public abstract class Person {
 
     @Column(name="person_name")
     private String name; // имя
+
+    @Column(name="person_surname")
+    private String surname; // фамилия
 
     @Column(name="person_age")
     private int age; // возраст
@@ -26,22 +35,6 @@ public abstract class Person {
 
     @Column(name="person_password")
     private String password; // пароль
-
-    public Person(long id, String name, int age, String email, String password) {
-        this.id = id;
-        this.name = name;
-        this.age = age;
-        this.email = email;
-        this.password = password;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
 
     /* Замена имени
      * Параметр: Новое имя

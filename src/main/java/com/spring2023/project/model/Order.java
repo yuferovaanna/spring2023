@@ -4,10 +4,14 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Table;
-import lombok.Getter;
+import lombok.*;
 
 /* Заказ */
-@Getter
+@Data
+@NoArgsConstructor(force = true)
+@AllArgsConstructor
+@Builder
+@Entity
 @Table(name="ORDERS")
 public class Order {
     @GeneratedValue
@@ -24,13 +28,6 @@ public class Order {
     private long[] books; // список номеров купленных книг
 
 
-    public Order(long id, long employeeTd, long customerId, long[] books) {
-        this.id = id;
-        this.employeeId = employeeTd;
-        this.customerId = customerId;
-        this.books = books;
-    }
-
     public void setId(long id) {
         this.id = id;
     }
@@ -46,20 +43,6 @@ public class Order {
     public void setBooks(long[] books) {
         this.books = books;
     }
-
-    /* Удаление книги из заказа
-
-    public void deleteBook() {
-
-    }
-     */
-    /* Завершение заказа
-
-    public void closeOrder() {
-
-    }
-     */
-
 
 }
 

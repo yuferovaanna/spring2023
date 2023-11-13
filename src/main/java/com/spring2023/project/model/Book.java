@@ -4,10 +4,14 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Table;
-import lombok.Getter;
+import lombok.*;
 
 // Книга
-@Getter
+@Data
+@NoArgsConstructor(force = true)
+@AllArgsConstructor
+@Builder
+@Entity
 @Table(name="BOOKS")
 public class Book {
     @GeneratedValue
@@ -25,13 +29,6 @@ public class Book {
 
     @Column(name="genre")
     private BookGenre genre; // жанр
-    public Book(long id, String title, String author, double price, BookGenre genre) {
-        this.id = id;
-        this.title = title;
-        this.author = author;
-        this.price = price;
-        this. genre = genre;
-    }
 
     public void setId(long id) {
         this.id = id;
