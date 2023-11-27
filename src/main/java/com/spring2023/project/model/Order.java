@@ -6,7 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Table;
 import lombok.*;
 
-/* Заказ */
+/** Заказ */
 @Data
 @NoArgsConstructor(force = true)
 @AllArgsConstructor
@@ -14,18 +14,19 @@ import lombok.*;
 @Entity
 @Table(name="ORDERS")
 public class Order {
+    /** Id заказа */
     @GeneratedValue
     @Column(name="id", nullable=false)
-    private long id; // индивидуальный номер заказа
-
+    private long id; //
+    /** Кто продал книгу */
     @Column(name="employeeId")
-    private long employeeId; // Кто продал книгу
-
+    private long employeeId; //
+    /** Кто купил книгу */
     @Column(name="customerId")
-    private long customerId; // Кто купил книгу
-
+    private long customerId; //
+    /** Cписок номеров купленных книг */
     @Column(name="order")
-    private long[] books; // список номеров купленных книг
+    private long[] books; //
 
 
     public void setId(long id) {

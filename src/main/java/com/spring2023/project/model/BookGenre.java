@@ -1,6 +1,6 @@
 package com.spring2023.project.model;
 
-// Жанр книг
+/* Жанр книг */
 public enum BookGenre {
     Art,
     Programming,

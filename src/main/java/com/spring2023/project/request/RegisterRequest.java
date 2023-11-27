@@ -1,22 +1,27 @@
 package com.spring2023.project.request;
 
-import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.lang.Nullable;
 
+/** Регистрация */
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class RegisterRequest {
-    private String login; // логин
-    private String email; // почта
-    private String password; // пароль
-    private String name; // имя
-    private String surname; // фамилия
-    private int age; // возраст
+    /** Логин */
+    private String login;
+    /** Почта */
+    private String email;
+    /** Пароль */
+    private String password;
+    /** Имя */
+    private String name;
+    /** Фамилия */
+    private String surname;
+    /** Возраст */
+    private int age;
 
 }

@@ -7,7 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
-/* Пользователь */
+/** Пользователь */
 @Data
 @NoArgsConstructor(force = true)
 @AllArgsConstructor
@@ -15,28 +15,29 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name="ACCOUNTS")
 public class Person {
+    /** Id пользователя */
     @Id
     @GeneratedValue
     @Column(name="id", nullable=false)
-    private long id; // индивидуальный номер пользователя
+    private long id;
+    /** Имя пользователя */
     @lombok.Setter
-
     @Column(name="person_name")
-    private String name; // имя
-
+    private String name;
+    /** Фамилия пользователя */
     @Column(name="person_surname")
-    private String surname; // фамилия
-
+    private String surname;
+    /** Возраст пользователя */
     @Column(name="person_age")
-    private int age; // возраст
-
+    private int age;
+    /** Почта */
     @Column(name="person_email")
-    private final String email; // почта
-
+    private final String email;
+    /** Пароль */
     @Column(name="person_password")
-    private String password; // пароль
+    private String password;
 
-    /* Замена имени
+    /** Замена имени
      * Параметр: Новое имя
      */
     public void changeName(String newName){
@@ -44,7 +45,7 @@ public class Person {
             name=newName;
     }
 
-    /* Замена пароля
+    /** Замена пароля
      * Параметр: Новый пароль
      */
     public void changePassword(String newPassword){

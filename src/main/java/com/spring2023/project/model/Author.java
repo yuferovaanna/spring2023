@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Table;
 import lombok.*;
 
+/** Автор */
 @Getter
 @Data
 @NoArgsConstructor(force = true)
@@ -14,17 +15,22 @@ import lombok.*;
 @Entity
 @Table(name="AUTHORS")
 public class Author {
+    /** id автора */
     @GeneratedValue
     @Column(name="id", nullable=false)
-    private long id; // id автора
+    private long id;
+    /** Имя автора */
     @Column(name="name")
-    private String name; // имя автора
+    private String name;
+    /** Фамилия автора */
     @Column(name="surname")
-    private String surname; // фамилия автора
+    private String surname;
+    /** Дата рождения */
     @Column(name="dateOfBirth")
-    private int dateOfBirth; // Дата рождения
+    private int dateOfBirth;
+    /** Дата смерти автора */
     @Column(name="dateOfDeath")
-    private int dateOfDeath; // дата смерти автора
+    private int dateOfDeath;
 
 
     public Author(Long id, String name, String surname,  int dateOfBirth, int dateOfDeath) {

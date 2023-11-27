@@ -6,7 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Table;
 import lombok.*;
 
-// Книга
+/** Книга */
 @Data
 @NoArgsConstructor(force = true)
 @AllArgsConstructor
@@ -14,19 +14,20 @@ import lombok.*;
 @Entity
 @Table(name="BOOKS")
 public class Book {
+    /** Id книги */
     @GeneratedValue
     @Column(name="id", nullable=false)
-    private long id; // id книги
-
+    private long id;
+    /** Название книги */
     @Column(name="title")
     private String title; // название
-
+    /** Автор книги */
     @Column(name="author")
-    private String author; // автор
-
+    private String author; //
+    /** Цена */
     @Column(name="price")
-    private double price; // цена
-
+    private double price; //
+    /** Жанр */
     @Column(name="genre")
     private BookGenre genre; // жанр
 
@@ -49,4 +50,5 @@ public class Book {
     public void setGenre(BookGenre genre) {
         this.genre = genre;
     }
+
 }
