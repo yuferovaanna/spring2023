@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.mapping.List;
 
 @Data
 @NoArgsConstructor(force = true)
@@ -26,13 +27,5 @@ public class Basket {
     private long employeeId;
     /** Cписок сохраненных книг */
     @Column(name="book")
-    private long[] books;
-    /** Количество товара в корзине */
-    @Column(name="count")
-    private int count;
-    /** Суммарная стоимость товаров в корзине */
-    @Column(name="finalCost")
-    private double finalCost;
-
-
+    private List[] books;
 }
