@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface BasketRepository extends CrudRepository<Basket, Long> {
-    Basket findByPerson_Id(Long person_id);
+    Basket findByPersonEntity_Id(Long personEntity_Id);
 }
 

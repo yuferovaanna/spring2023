@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface OrderRepository extends CrudRepository<Order, Long> {
-    Iterable<OrderRepository> findAllByPerson_Id(Long person_id);
+    Iterable<OrderRepository> findAllByPersonEntity_Id(Long personEntity_Id);
 }
 

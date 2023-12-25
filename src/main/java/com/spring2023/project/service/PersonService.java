@@ -14,9 +14,8 @@ public class PersonService {
     private PersonRepository personRepository;
     @Autowired
     private BasketService basketService;
-    public Person registration(Person person) throws PersonAlreadyCreatedException,
+    public void registration(Person person) throws PersonAlreadyCreatedException,
             LoginFailedException, PersonNotFoundException {
-        return person;
     }
     public Person login(String username, String password) {
         return null;
